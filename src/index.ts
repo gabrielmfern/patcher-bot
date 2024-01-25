@@ -21,11 +21,12 @@ run((app: Probot) => {
         const pullRequestRepo = context.repo({
           ref: pullRequestUrl
         });
-        context.octokit.rest.repos.downloadTarballArchive({
-          owner: context.payload.repository.owner.login,
-          repo: context.payload.repository.name,
-          ref: context.payload.issue.pull_request.url!
-        });
+        console.log(pullRequestRepo);
+        // context.octokit.rest.repos.downloadTarballArchive({
+        //   owner: context.payload.repository.owner.login,
+        //   repo: context.payload.repository.name,
+        //   ref: context.payload.issue.pull_request.url!
+        // });
       }
     }
   });
